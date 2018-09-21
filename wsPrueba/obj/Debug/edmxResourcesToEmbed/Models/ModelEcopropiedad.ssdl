@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Ecopropiedad_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="sp_communitiesbyuser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codeUser" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_getCitiesbyCountry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDCountry" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_getCountries" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getPlans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cityApply" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getTypeBusiness" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getTypes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="applytypes" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_typeBusiness" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_validateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codeUser" Type="varchar" Mode="In" />
+    <Parameter Name="passwordUser" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_validateUserWithMail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="emailUser" Type="varchar" Mode="In" />
+    <Parameter Name="passwordUser" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_createIssue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="IDcommunity" Type="int" Mode="In" />
+    <Parameter Name="titleIssue" Type="varchar" Mode="In" />
+    <Parameter Name="descriptionIssue" Type="varchar" Mode="In" />
+    <Parameter Name="img1Issue" Type="varchar" Mode="In" />
+    <Parameter Name="img2Issue" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_getdataUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="codeUser" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_getIssuesByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="IDcommunity" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="Ecopropiedad_ModelStoreContainer" />
+</Schema>

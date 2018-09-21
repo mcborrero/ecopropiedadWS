@@ -1,0 +1,146 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Ecopropiedad_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="sp_changePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDUser" Type="int" Mode="In" />
+    <Parameter Name="newPassword" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_getCitiesbyCountry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDCountry" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_getCommunitiesByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idUser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getCountNotificationsUnread" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDUser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getCountries" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getDocuments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDUser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getDocumentsByCommunity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDCommunity" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getDocumentsByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDUser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getImagesPlace" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDPlace" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getNotificationsByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDNotification" Type="int" Mode="In" />
+    <Parameter Name="IDUser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getNotificationsByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDUser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getNotificationsUnread" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDUser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getPlans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="cityApply" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getProvider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idProvider" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getProvidersByType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDType" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getProvidersFound" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="searchtext" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_getTypeBusiness" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getTypes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="applytypes" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_readNotification" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDNotification" Type="int" Mode="In" />
+    <Parameter Name="IDUser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_setDataUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IDUser" Type="int" Mode="In" />
+    <Parameter Name="newPassword" Type="varchar" Mode="In" />
+    <Parameter Name="notifyMail" Type="int" Mode="In" />
+    <Parameter Name="emailUser" Type="varchar" Mode="In" />
+    <Parameter Name="numberPhone" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_setReservations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idplace" Type="int" Mode="In" />
+    <Parameter Name="IDUser" Type="int" Mode="In" />
+    <Parameter Name="dateReserved" Type="datetime" Mode="In" />
+    <Parameter Name="dateEvent" Type="datetime" Mode="In" />
+    <Parameter Name="reason" Type="varchar" Mode="In" />
+    <Parameter Name="numberPeople" Type="int" Mode="In" />
+    <Parameter Name="time" Type="varchar" Mode="In" />
+    <Parameter Name="notes" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_typeBusiness" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_validateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="codeUser" Type="varchar" Mode="In" />
+    <Parameter Name="passwordUser" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_validateUserWithMail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="emailUser" Type="varchar" Mode="In" />
+    <Parameter Name="passwordUser" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_createIssue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="IDcommunity" Type="int" Mode="In" />
+    <Parameter Name="titleIssue" Type="varchar" Mode="In" />
+    <Parameter Name="descriptionIssue" Type="varchar" Mode="In" />
+    <Parameter Name="img1Issue" Type="varchar(max)" Mode="In" />
+    <Parameter Name="img2Issue" Type="varchar(max)" Mode="In" />
+    <Parameter Name="typeIssue" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_createNotification" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="IDcommunity" Type="int" Mode="In" />
+    <Parameter Name="titleNotification" Type="varchar" Mode="In" />
+    <Parameter Name="messageNotification" Type="varchar" Mode="In" />
+    <Parameter Name="statusNotification" Type="int" Mode="In" />
+    <Parameter Name="typeNotification" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getAnswersIssue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="IDIssue" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getdataUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="codeUser" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_getdataUserByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="emailUser" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_getdataUserByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="IDUser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getDetailsPlaces" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="IDPlace" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getIssuesByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="IDcommunity" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getPlacesToReserve" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="IDcommunity" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_getReservationsByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="IDUser" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_setAnswerIssue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="IDIssue" Type="int" Mode="In" />
+    <Parameter Name="IDUser" Type="varchar" Mode="In" />
+    <Parameter Name="messageAnswer" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="sp_setProvider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+    <Parameter Name="nameProvider" Type="varchar" Mode="In" />
+    <Parameter Name="typeProvider" Type="int" Mode="In" />
+    <Parameter Name="emailProvider" Type="varchar" Mode="In" />
+    <Parameter Name="addressProvider" Type="varchar" Mode="In" />
+    <Parameter Name="latitudeProvider" Type="varchar" Mode="In" />
+    <Parameter Name="altitudeProvider" Type="varchar" Mode="In" />
+    <Parameter Name="descriptionProvider" Type="varchar" Mode="In" />
+    <Parameter Name="imageProvider" Type="varchar(max)" Mode="In" />
+    <Parameter Name="cityProvider" Type="int" Mode="In" />
+    <Parameter Name="contactProvider" Type="varchar" Mode="In" />
+    <Parameter Name="typephone1Provider" Type="int" Mode="In" />
+    <Parameter Name="numberphone1Provider" Type="varchar" Mode="In" />
+    <Parameter Name="typephone2Provider" Type="int" Mode="In" />
+    <Parameter Name="numberphone2Provider" Type="varchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="Ecopropiedad_ModelStoreContainer" />
+</Schema>

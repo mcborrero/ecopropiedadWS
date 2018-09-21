@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ecopropiedadModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="IDUser" />
+    </Key>
+    <Property Name="codeUser" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="nameUser" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="emailUser" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="passwordUser" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="lastAccessUser" Type="DateTime" Precision="3" />
+    <Property Name="idCity" Type="Int32" />
+    <Property Name="IDUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityContainer Name="ecopropiedadEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="users" EntityType="Self.users" />
+    <FunctionImport Name="sp_validateUser" ReturnType="Collection(ecopropiedadModel.sp_validateUser_Result)">
+      <Parameter Name="codeUser" Mode="In" Type="String" />
+      <Parameter Name="passwordUser" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getCitiesbyCountry" ReturnType="Collection(ecopropiedadModel.sp_getCitiesbyCountry_Result)">
+      <Parameter Name="IDCountry" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getCountries" ReturnType="Collection(ecopropiedadModel.sp_getCountries_Result)" />
+    <FunctionImport Name="sp_getTypes" ReturnType="Collection(ecopropiedadModel.sp_getTypes_Result1)">
+      <Parameter Name="applytypes" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_validateUser_Result">
+    <Property Type="Int32" Name="countIDs" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_getCitiesbyCountry_Result">
+    <Property Type="Int32" Name="IDCity" Nullable="false" />
+    <Property Type="String" Name="nameCity" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getTypes_Result">
+    <Property Type="Int32" Name="idType" Nullable="false" />
+    <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_getTypes_Result1">
+    <Property Type="Int32" Name="idType" Nullable="false" />
+    <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_getCountries_Result">
+    <Property Type="String" Name="IDCountry" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>

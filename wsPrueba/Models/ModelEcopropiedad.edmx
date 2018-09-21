@@ -1,0 +1,1045 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Ecopropiedad_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="sp_changePassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDUser" Type="int" Mode="In" />
+          <Parameter Name="newPassword" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_getCitiesbyCountry" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDCountry" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_getCommunitiesByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getCountNotificationsUnread" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getCountries" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getDocuments" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getDocumentsByCommunity" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDCommunity" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getDocumentsByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getImagesPlace" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDPlace" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getNotificationsByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDNotification" Type="int" Mode="In" />
+          <Parameter Name="IDUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getNotificationsByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getNotificationsUnread" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getPlans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="cityApply" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getProvider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idProvider" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getProvidersByType" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDType" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getProvidersFound" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="searchtext" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_getTypeBusiness" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getTypes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="applytypes" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_readNotification" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDNotification" Type="int" Mode="In" />
+          <Parameter Name="IDUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_setDataUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IDUser" Type="int" Mode="In" />
+          <Parameter Name="newPassword" Type="varchar" Mode="In" />
+          <Parameter Name="notifyMail" Type="int" Mode="In" />
+          <Parameter Name="emailUser" Type="varchar" Mode="In" />
+          <Parameter Name="numberPhone" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_setReservations" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idplace" Type="int" Mode="In" />
+          <Parameter Name="IDUser" Type="int" Mode="In" />
+          <Parameter Name="dateReserved" Type="datetime" Mode="In" />
+          <Parameter Name="dateEvent" Type="datetime" Mode="In" />
+          <Parameter Name="reason" Type="varchar" Mode="In" />
+          <Parameter Name="numberPeople" Type="int" Mode="In" />
+          <Parameter Name="time" Type="varchar" Mode="In" />
+          <Parameter Name="notes" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_typeBusiness" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_validateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="codeUser" Type="varchar" Mode="In" />
+          <Parameter Name="passwordUser" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_validateUserWithMail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="emailUser" Type="varchar" Mode="In" />
+          <Parameter Name="passwordUser" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_createIssue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+          <Parameter Name="IDcommunity" Type="int" Mode="In" />
+          <Parameter Name="titleIssue" Type="varchar" Mode="In" />
+          <Parameter Name="descriptionIssue" Type="varchar" Mode="In" />
+          <Parameter Name="img1Issue" Type="varchar(max)" Mode="In" />
+          <Parameter Name="img2Issue" Type="varchar(max)" Mode="In" />
+          <Parameter Name="typeIssue" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_createNotification" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+          <Parameter Name="IDcommunity" Type="int" Mode="In" />
+          <Parameter Name="titleNotification" Type="varchar" Mode="In" />
+          <Parameter Name="messageNotification" Type="varchar" Mode="In" />
+          <Parameter Name="statusNotification" Type="int" Mode="In" />
+          <Parameter Name="typeNotification" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getAnswersIssue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+          <Parameter Name="IDIssue" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getdataUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+          <Parameter Name="codeUser" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_getdataUserByEmail" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+          <Parameter Name="emailUser" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_getdataUserByID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+          <Parameter Name="IDUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getDetailsPlaces" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+          <Parameter Name="IDPlace" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getIssuesByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+          <Parameter Name="IDcommunity" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getPlacesToReserve" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+          <Parameter Name="IDcommunity" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_getReservationsByUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+          <Parameter Name="IDUser" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_setAnswerIssue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+          <Parameter Name="IDIssue" Type="int" Mode="In" />
+          <Parameter Name="IDUser" Type="varchar" Mode="In" />
+          <Parameter Name="messageAnswer" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="sp_setProvider" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="ecopropiedad">
+          <Parameter Name="nameProvider" Type="varchar" Mode="In" />
+          <Parameter Name="typeProvider" Type="int" Mode="In" />
+          <Parameter Name="emailProvider" Type="varchar" Mode="In" />
+          <Parameter Name="addressProvider" Type="varchar" Mode="In" />
+          <Parameter Name="latitudeProvider" Type="varchar" Mode="In" />
+          <Parameter Name="altitudeProvider" Type="varchar" Mode="In" />
+          <Parameter Name="descriptionProvider" Type="varchar" Mode="In" />
+          <Parameter Name="imageProvider" Type="varchar(max)" Mode="In" />
+          <Parameter Name="cityProvider" Type="int" Mode="In" />
+          <Parameter Name="contactProvider" Type="varchar" Mode="In" />
+          <Parameter Name="typephone1Provider" Type="int" Mode="In" />
+          <Parameter Name="numberphone1Provider" Type="varchar" Mode="In" />
+          <Parameter Name="typephone2Provider" Type="int" Mode="In" />
+          <Parameter Name="numberphone2Provider" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="Ecopropiedad_ModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Ecopropiedad_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="EcoPropiedadEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="sp_communitiesbyuser">
+          <Parameter Name="idUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getCitiesbyCountry" ReturnType="Collection(Ecopropiedad_Model.sp_getCitiesbyCountry_Result)">
+          <Parameter Name="IDCountry" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getCountries" ReturnType="Collection(Ecopropiedad_Model.sp_getCountries_Result)" />
+          <FunctionImport Name="sp_getPlans" ReturnType="Collection(Ecopropiedad_Model.sp_getPlans_Result)">
+          <Parameter Name="cityApply" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getTypeBusiness" ReturnType="Collection(Ecopropiedad_Model.sp_getTypeBusiness_Result)" />
+          <FunctionImport Name="sp_typeBusiness" ReturnType="Collection(Ecopropiedad_Model.sp_typeBusiness_Result)" />
+          <FunctionImport Name="sp_validateUser" ReturnType="Collection(Ecopropiedad_Model.sp_validateUser_Result)">
+            <Parameter Name="codeUser" Mode="In" Type="String" />
+            <Parameter Name="passwordUser" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getdataUser" ReturnType="Collection(Ecopropiedad_Model.sp_getdataUser_Result)">
+          <Parameter Name="codeUser" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getIssuesByUser" ReturnType="Collection(Ecopropiedad_Model.sp_getIssuesByUser_Result)">
+          <Parameter Name="IDcommunity" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_validateUserWithMail" ReturnType="Collection(Ecopropiedad_Model.sp_validateUserWithMail_Result)">
+            <Parameter Name="emailUser" Mode="In" Type="String" />
+            <Parameter Name="passwordUser" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getDetailsPlaces" ReturnType="Collection(Ecopropiedad_Model.sp_getDetailsPlaces_Result)">
+          <Parameter Name="IDPlace" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getPlacesToReserve" ReturnType="Collection(Ecopropiedad_Model.sp_getPlacesToReserve_Result)">
+          <Parameter Name="IDcommunity" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getReservationsByUser" ReturnType="Collection(Ecopropiedad_Model.sp_getReservationsByUser_Result1)">
+          <Parameter Name="IDUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getProvider" ReturnType="Collection(Ecopropiedad_Model.sp_getProvider_Result)">
+          <Parameter Name="idProvider" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getProvidersByType" ReturnType="Collection(Ecopropiedad_Model.sp_getProvidersByType_Result)">
+          <Parameter Name="IDType" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getdataUserByEmail" ReturnType="Collection(Ecopropiedad_Model.sp_getdataUserByEmail_Result)">
+          <Parameter Name="emailUser" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getdataUserByID" ReturnType="Collection(Ecopropiedad_Model.sp_getdataUserByID_Result)">
+          <Parameter Name="IDUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_setProvider" ReturnType="Collection(Ecopropiedad_Model.sp_setProvider_Result)">
+            <Parameter Name="nameProvider" Mode="In" Type="String" />
+            <Parameter Name="typeProvider" Mode="In" Type="Int32" />
+            <Parameter Name="emailProvider" Mode="In" Type="String" />
+            <Parameter Name="addressProvider" Mode="In" Type="String" />
+            <Parameter Name="latitudeProvider" Mode="In" Type="String" />
+            <Parameter Name="altitudeProvider" Mode="In" Type="String" />
+            <Parameter Name="descriptionProvider" Mode="In" Type="String" />
+            <Parameter Name="imageProvider" Mode="In" Type="String" />
+            <Parameter Name="cityProvider" Mode="In" Type="Int32" />
+            <Parameter Name="contactProvider" Mode="In" Type="String" />
+            <Parameter Name="typephone1Provider" Mode="In" Type="Int32" />
+            <Parameter Name="numberphone1Provider" Mode="In" Type="String" />
+            <Parameter Name="typephone2Provider" Mode="In" Type="Int32" />
+            <Parameter Name="numberphone2Provider" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_changePassword" ReturnType="Collection(Ecopropiedad_Model.sp_changePassword_Result)">
+            <Parameter Name="IDUser" Mode="In" Type="Int32" />
+            <Parameter Name="newPassword" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_createIssue" ReturnType="Collection(Ecopropiedad_Model.sp_createIssue_Result)">
+            <Parameter Name="IDcommunity" Mode="In" Type="Int32" />
+            <Parameter Name="titleIssue" Mode="In" Type="String" />
+            <Parameter Name="descriptionIssue" Mode="In" Type="String" />
+            <Parameter Name="img1Issue" Mode="In" Type="String" />
+            <Parameter Name="img2Issue" Mode="In" Type="String" />
+            <Parameter Name="typeIssue" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getTypes" ReturnType="Collection(Ecopropiedad_Model.sp_getTypes_Result1)">
+          <Parameter Name="applytypes" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getNotificationsByUser" ReturnType="Collection(Ecopropiedad_Model.sp_getNotificationsByUser_Result)">
+          <Parameter Name="IDUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_createNotification">
+            <Parameter Name="IDcommunity" Mode="In" Type="Int32" />
+            <Parameter Name="titleNotification" Mode="In" Type="String" />
+            <Parameter Name="messageNotification" Mode="In" Type="String" />
+            <Parameter Name="statusNotification" Mode="In" Type="Int32" />
+            <Parameter Name="typeNotification" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getNotificationsByID" ReturnType="Collection(Ecopropiedad_Model.sp_getNotificationsByID_Result)">
+            <Parameter Name="IDNotification" Mode="In" Type="Int32" />
+            <Parameter Name="IDUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_readNotification" ReturnType="Collection(Ecopropiedad_Model.sp_readNotification_Result)">
+            <Parameter Name="IDNotification" Mode="In" Type="Int32" />
+            <Parameter Name="IDUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getImagesPlace" ReturnType="Collection(Ecopropiedad_Model.sp_getImagesPlace_Result)">
+          <Parameter Name="IDPlace" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_setReservations" ReturnType="Collection(Ecopropiedad_Model.sp_setReservations_Result)">
+            <Parameter Name="idplace" Mode="In" Type="Int32" />
+            <Parameter Name="IDUser" Mode="In" Type="Int32" />
+            <Parameter Name="dateReserved" Mode="In" Type="DateTime" />
+            <Parameter Name="dateEvent" Mode="In" Type="DateTime" />
+            <Parameter Name="reason" Mode="In" Type="String" />
+            <Parameter Name="numberPeople" Mode="In" Type="Int32" />
+            <Parameter Name="time" Mode="In" Type="String" />
+            <Parameter Name="notes" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_setAnswerIssue" ReturnType="Collection(Ecopropiedad_Model.sp_setAnswerIssue_Result)">
+            <Parameter Name="IDIssue" Mode="In" Type="Int32" />
+            <Parameter Name="IDUser" Mode="In" Type="String" />
+            <Parameter Name="messageAnswer" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getAnswersIssue" ReturnType="Collection(Ecopropiedad_Model.sp_getAnswersIssue_Result)">
+          <Parameter Name="IDIssue" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getDocuments" ReturnType="Collection(Ecopropiedad_Model.sp_getDocuments_Result)" >
+          <Parameter Name="IDUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getNotificationsUnread" ReturnType="Collection(Ecopropiedad_Model.sp_getNotificationsUnread_Result)">
+          <Parameter Name="IDUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getProvidersFound" ReturnType="Collection(Ecopropiedad_Model.sp_getProvidersFound_Result)">
+          <Parameter Name="searchtext" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getDocumentsByCommunity" ReturnType="Collection(Ecopropiedad_Model.sp_getDocumentsByCommunity_Result)">
+          <Parameter Name="IDCommunity" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getDocumentsByUser" ReturnType="Collection(Ecopropiedad_Model.sp_getDocumentsByUser_Result)">
+          <Parameter Name="IDUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getCommunitiesByUser" ReturnType="Collection(Ecopropiedad_Model.sp_getCommunitiesByUser_Result)">
+          <Parameter Name="idUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_getCountNotificationsUnread" ReturnType="Collection(Ecopropiedad_Model.sp_getCountNotificationsUnread_Result)">
+          <Parameter Name="IDUser" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_setDataUser" ReturnType="Collection(Ecopropiedad_Model.sp_setDataUser_Result)">
+            <Parameter Name="IDUser" Mode="In" Type="Int32" />
+            <Parameter Name="newPassword" Mode="In" Type="String" />
+            <Parameter Name="notifyMail" Mode="In" Type="Int32" />
+            <Parameter Name="emailUser" Mode="In" Type="String" />
+            <Parameter Name="numberPhone" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_getCitiesbyCountry_Result">
+          <Property Type="Int32" Name="IDCity" Nullable="false" />
+          <Property Type="String" Name="nameCity" Nullable="false" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="sp_getPlans_Result">
+          <Property Type="Int32" Name="idPlan" Nullable="false" />
+          <Property Type="String" Name="namePlan" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="descriptionPlan" Nullable="true" MaxLength="150" />
+          <Property Type="Decimal" Name="pricePlan" Nullable="true" Precision="18" Scale="0" />
+        </ComplexType>
+        <ComplexType Name="sp_getTypeBusiness_Result">
+          <Property Type="Int32" Name="idType" Nullable="false" />
+          <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="sp_getTypes_Result">
+          <Property Type="Int32" Name="idType" Nullable="false" />
+          <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="sp_typeBusiness_Result">
+          <Property Type="Int32" Name="idType" Nullable="false" />
+          <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="sp_validateUser_Result">
+          <Property Type="Int32" Name="countIDs" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_getCountries_Result">
+          <Property Type="String" Name="IDCountry" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_getdataUser_Result">
+          <Property Type="Int32" Name="idUser" Nullable="false" />
+          <Property Type="String" Name="nameUser" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="emailUser" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="passwordUser" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="idCity" Nullable="true" />
+          <Property Type="String" Name="nameCity" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="idCountry" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="notifyMail" Nullable="true" />
+          <Property Type="String" Name="numberPhone" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="sp_validateUserWithMail_Result">
+          <Property Type="Int32" Name="idUser" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_getDetailsPlaces_Result">
+          <Property Type="String" Name="descriptionDetail" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="valueDetail" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="namePlace" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="descriptionPlace" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="mainImagePlace" Nullable="true" MaxLength="250" />
+        </ComplexType>
+        <ComplexType Name="sp_getReservationsByUser_Result">
+          <Property Type="DateTime" Name="dateEvent" Nullable="true" Precision="23" />
+          <Property Type="String" Name="namePlace" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="statusReservation" Nullable="false" />
+          <Property Type="String" Name="iconStatus" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="sp_getReservationsByUser_Result1">
+          <Property Type="DateTime" Name="dateEvent" Nullable="true" Precision="23" />
+          <Property Type="String" Name="namePlace" Nullable="false" MaxLength="150" />
+          <Property Type="Int32" Name="statusReservation" Nullable="false" />
+          <Property Type="String" Name="iconStatus" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="sp_getProvider_Result">
+          <Property Type="Int32" Name="IDProvider" Nullable="false" />
+          <Property Type="String" Name="nameProvider" Nullable="false" MaxLength="255" />
+          <Property Type="Int32" Name="typeProvider" Nullable="false" />
+          <Property Type="String" Name="emailProvider" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="addressProvider" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="latitudeProvider" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="altitudeProvider" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="descriptionProvider" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="imageProvider" Nullable="true" />
+          <Property Type="DateTime" Name="dateRegisterProvider" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="statusProvider" Nullable="false" />
+          <Property Type="Int32" Name="cityProvider" Nullable="false" />
+          <Property Type="Int32" Name="typephone1Provider" Nullable="true" />
+          <Property Type="String" Name="numberphone1Provider" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="typephone2Provider" Nullable="true" />
+          <Property Type="String" Name="numberphone2Provider" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="contactProvider" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="sp_getProvidersByType_Result">
+          <Property Type="Int32" Name="IDProvider" Nullable="false" />
+          <Property Type="String" Name="nameProvider" Nullable="false" MaxLength="255" />
+          <Property Type="Int32" Name="typeProvider" Nullable="false" />
+          <Property Type="String" Name="emailProvider" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="addressProvider" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="latitudeProvider" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="altitudeProvider" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="descriptionProvider" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="imageProvider" Nullable="true" />
+          <Property Type="DateTime" Name="dateRegisterProvider" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="statusProvider" Nullable="false" />
+          <Property Type="String" Name="titleStatus" Nullable="true" MaxLength="25" />
+          <Property Type="Int32" Name="cityProvider" Nullable="false" />
+          <Property Type="Int32" Name="typephone1Provider" Nullable="true" />
+          <Property Type="String" Name="numberphone1Provider" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="typephone2Provider" Nullable="true" />
+          <Property Type="String" Name="numberphone2Provider" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="contactProvider" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="sp_getdataUserByEmail_Result">
+          <Property Type="Int32" Name="idUser" Nullable="false" />
+          <Property Type="String" Name="nameUser" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="emailUser" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="passwordUser" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="idCity" Nullable="true" />
+          <Property Type="String" Name="nameCity" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="idCountry" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="notifyMail" Nullable="true" />
+          <Property Type="String" Name="numberPhone" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="sp_getdataUserByID_Result">
+          <Property Type="Int32" Name="idUser" Nullable="false" />
+          <Property Type="String" Name="nameUser" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="emailUser" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="passwordUser" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="idCity" Nullable="true" />
+          <Property Type="String" Name="nameCity" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="idCountry" Nullable="true" MaxLength="50" />
+          <Property Type="Boolean" Name="notifyMail" Nullable="true" />
+          <Property Type="String" Name="numberPhone" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="sp_setProvider_Result">
+          <Property Type="Int32" Name="rowsinserted" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_changePassword_Result">
+          <Property Type="Int32" Name="rowsinserted" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_createIssue_Result">
+          <Property Type="Int32" Name="rowsinserted" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getTypes_Result1">
+          <Property Type="Int32" Name="idType" Nullable="false" />
+          <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="pathIcon" Nullable="false" MaxLength="301" />
+        </ComplexType>
+        <ComplexType Name="sp_getNotificationsByUser_Result">
+          <Property Type="Int32" Name="IdNotification" Nullable="false" />
+          <Property Type="String" Name="titleNotification" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="messageNotification" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="statusNotification" Nullable="false" />
+          <Property Type="Int32" Name="typeNotification" Nullable="false" />
+          <Property Type="DateTime" Name="dateNotification" Nullable="true" Precision="23" />
+          <Property Type="String" Name="titleStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="iconStatus" Nullable="false" MaxLength="301" />
+          <Property Type="String" Name="iconType" Nullable="false" MaxLength="301" />
+          <Property Type="Int32" Name="statusReaded" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_setReservations_Result">
+          <Property Type="Int32" Name="rowsinserted" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getImagesPlace_Result">
+          <Property Type="String" Name="pathImage" Nullable="false" MaxLength="321" />
+        </ComplexType>
+        <ComplexType Name="sp_getNotificationsByID_Result">
+          <Property Type="String" Name="titleNotification" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="messageNotification" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="statusNotification" Nullable="false" />
+          <Property Type="Int32" Name="typeNotification" Nullable="false" />
+          <Property Type="DateTime" Name="dateNotification" Nullable="true" Precision="23" />
+          <Property Type="String" Name="titleStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="iconStatus" Nullable="false" MaxLength="301" />
+          <Property Type="String" Name="iconType" Nullable="false" MaxLength="301" />
+          <Property Type="Int32" Name="statusReaded" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getPlacesToReserve_Result">
+          <Property Type="Int32" Name="idPlace" Nullable="false" />
+          <Property Type="String" Name="codeplace" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="namePlace" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="descriptionPlace" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="mainImagePlace" Nullable="false" MaxLength="316" />
+          <Property Type="Int32" Name="statusPlace" Nullable="true" />
+          <Property Type="String" Name="titleStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="iconStatus" Nullable="false" MaxLength="301" />
+        </ComplexType>
+        <ComplexType Name="sp_readNotification_Result">
+          <Property Type="Int32" Name="rowsupdated" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_setAnswerIssue_Result">
+          <Property Type="Int32" Name="rowsinserted" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getAnswersIssue_Result">
+          <Property Type="String" Name="nameUser" Nullable="false" MaxLength="511" />
+          <Property Type="Int32" Name="IDUser" Nullable="false" />
+          <Property Type="String" Name="messageAnswer" Nullable="true" MaxLength="500" />
+          <Property Type="DateTime" Name="dateAnswer" Nullable="true" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="sp_getDocuments_Result">
+          <Property Type="Int32" Name="iddocument" Nullable="false" />
+          <Property Type="String" Name="descriptionDocument" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="pathDocument" Nullable="false" MaxLength="304" />
+          <Property Type="DateTime" Name="dateCreated" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="lastModified" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="statusDocument" Nullable="false" />
+          <Property Type="String" Name="iconStatus" Nullable="false" MaxLength="308" />
+          <Property Type="Int32" Name="typeDocument" Nullable="true" />
+          <Property Type="String" Name="iconType" Nullable="false" MaxLength="307" />
+        </ComplexType>
+        <ComplexType Name="sp_getNotificationsUnread_Result">
+          <Property Type="Int32" Name="IdNotification" Nullable="false" />
+          <Property Type="String" Name="titleNotification" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="messageNotification" Nullable="false" MaxLength="500" />
+          <Property Type="Int32" Name="statusNotification" Nullable="false" />
+          <Property Type="Int32" Name="typeNotification" Nullable="false" />
+          <Property Type="DateTime" Name="dateNotification" Nullable="true" Precision="23" />
+          <Property Type="String" Name="titleStatus" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="iconStatus" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="statusReaded" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getProvidersFound_Result">
+          <Property Type="Int32" Name="IDProvider" Nullable="false" />
+          <Property Type="String" Name="nameProvider" Nullable="false" MaxLength="255" />
+          <Property Type="Int32" Name="typeProvider" Nullable="false" />
+          <Property Type="String" Name="emailProvider" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="addressProvider" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="latitudeProvider" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="altitudeProvider" Nullable="true" MaxLength="5" />
+          <Property Type="String" Name="descriptionProvider" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="imageProvider" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="dateRegisterProvider" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="statusProvider" Nullable="false" />
+          <Property Type="String" Name="titleStatus" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="cityProvider" Nullable="false" />
+          <Property Type="Int32" Name="typephone1Provider" Nullable="true" />
+          <Property Type="String" Name="numberphone1Provider" Nullable="true" MaxLength="15" />
+          <Property Type="Int32" Name="typephone2Provider" Nullable="true" />
+          <Property Type="String" Name="numberphone2Provider" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="contactProvider" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="sp_getIssuesByUser_Result">
+          <Property Type="Int32" Name="IDCommunity" Nullable="false" />
+          <Property Type="Int32" Name="IDIssue" Nullable="false" />
+          <Property Type="String" Name="numbertitleIssue" Nullable="false" MaxLength="8000" />
+          <Property Type="String" Name="titleIssue" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="descriptionIssue" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="statusIssue" Nullable="true" />
+          <Property Type="String" Name="descriptionStatus" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="iconStatus" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="typeIssue" Nullable="true" />
+          <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="dateRegisterIssue" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="dateChangedIssue" Nullable="true" Precision="23" />
+          <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="numberIssue" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="img1Issue" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="img2Issue" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="img3Issue" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="totalAnswers" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_getCommunitiesByUser_Result">
+          <Property Type="Int32" Name="IDCommunity" Nullable="false" />
+          <Property Type="String" Name="nameCommunity" Nullable="false" MaxLength="255" />
+          <Property Type="String" Name="logoCommunity" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="sp_getDocumentsByCommunity_Result">
+          <Property Type="Int32" Name="iddocument" Nullable="false" />
+          <Property Type="String" Name="descriptionDocument" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="titleDocument" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="pathDocument" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="dateCreated" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="lastModified" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="statusDocument" Nullable="false" />
+          <Property Type="String" Name="iconStatus" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="typeDocument" Nullable="true" />
+          <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="messageDocument" Nullable="true" />
+          <Property Type="String" Name="statusSent" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="sp_getDocumentsByUser_Result">
+          <Property Type="Int32" Name="iddocument" Nullable="false" />
+          <Property Type="String" Name="descriptionDocument" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="titleDocument" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="pathDocument" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="dateCreated" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="lastModified" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="statusDocument" Nullable="false" />
+          <Property Type="String" Name="iconStatus" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="typeDocument" Nullable="true" />
+          <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="messageDocument" Nullable="true" />
+          <Property Type="String" Name="statusSent" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="sp_getCountNotificationsUnread_Result">
+          <Property Type="Int32" Name="notificationsUnread" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_setDataUser_Result">
+          <Property Type="Int32" Name="rowsinserted" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Ecopropiedad_ModelStoreContainer" CdmEntityContainer="EcoPropiedadEntities">
+          <FunctionImportMapping FunctionImportName="sp_getCitiesbyCountry" FunctionName="Ecopropiedad_Model.Store.sp_getCitiesbyCountry">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getCitiesbyCountry_Result">
+                <ScalarProperty Name="IDCity" ColumnName="IDCity" />
+                <ScalarProperty Name="nameCity" ColumnName="nameCity" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getCountries" FunctionName="Ecopropiedad_Model.Store.sp_getCountries" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getCountries_Result">
+                <ScalarProperty Name="IDCountry" ColumnName="IDCountry" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getPlans" FunctionName="Ecopropiedad_Model.Store.sp_getPlans">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getPlans_Result">
+                <ScalarProperty Name="idPlan" ColumnName="idPlan" />
+                <ScalarProperty Name="namePlan" ColumnName="namePlan" />
+                <ScalarProperty Name="descriptionPlan" ColumnName="descriptionPlan" />
+                <ScalarProperty Name="pricePlan" ColumnName="pricePlan" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getTypeBusiness" FunctionName="Ecopropiedad_Model.Store.sp_getTypeBusiness">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getTypeBusiness_Result">
+                <ScalarProperty Name="idType" ColumnName="idType" />
+                <ScalarProperty Name="descriptionType" ColumnName="descriptionType" />
+                <ScalarProperty Name="iconType" ColumnName="iconType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_typeBusiness" FunctionName="Ecopropiedad_Model.Store.sp_typeBusiness">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_typeBusiness_Result">
+                <ScalarProperty Name="idType" ColumnName="idType" />
+                <ScalarProperty Name="descriptionType" ColumnName="descriptionType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_validateUser" FunctionName="Ecopropiedad_Model.Store.sp_validateUser" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_validateUser_Result">
+                <ScalarProperty Name="countIDs" ColumnName="countIDs" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getdataUser" FunctionName="Ecopropiedad_Model.Store.sp_getdataUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getdataUser_Result">
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="nameUser" ColumnName="nameUser" />
+                <ScalarProperty Name="emailUser" ColumnName="emailUser" />
+                <ScalarProperty Name="passwordUser" ColumnName="passwordUser" />
+                <ScalarProperty Name="idCity" ColumnName="idCity" />
+                <ScalarProperty Name="nameCity" ColumnName="nameCity" />
+                <ScalarProperty Name="idCountry" ColumnName="idCountry" />
+                <ScalarProperty Name="notifyMail" ColumnName="notifyMail" />
+                <ScalarProperty Name="numberPhone" ColumnName="numberPhone" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getIssuesByUser" FunctionName="Ecopropiedad_Model.Store.sp_getIssuesByUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getIssuesByUser_Result">
+                <ScalarProperty Name="IDCommunity" ColumnName="IDCommunity" />
+                <ScalarProperty Name="IDIssue" ColumnName="IDIssue" />
+                <ScalarProperty Name="numbertitleIssue" ColumnName="numbertitleIssue" />
+                <ScalarProperty Name="titleIssue" ColumnName="titleIssue" />
+                <ScalarProperty Name="descriptionIssue" ColumnName="descriptionIssue" />
+                <ScalarProperty Name="statusIssue" ColumnName="statusIssue" />
+                <ScalarProperty Name="descriptionStatus" ColumnName="descriptionStatus" />
+                <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+                <ScalarProperty Name="typeIssue" ColumnName="typeIssue" />
+                <ScalarProperty Name="descriptionType" ColumnName="descriptionType" />
+                <ScalarProperty Name="dateRegisterIssue" ColumnName="dateRegisterIssue" />
+                <ScalarProperty Name="dateChangedIssue" ColumnName="dateChangedIssue" />
+                <ScalarProperty Name="iconType" ColumnName="iconType" />
+                <ScalarProperty Name="numberIssue" ColumnName="numberIssue" />
+                <ScalarProperty Name="img1Issue" ColumnName="img1Issue" />
+                <ScalarProperty Name="img2Issue" ColumnName="img2Issue" />
+                <ScalarProperty Name="img3Issue" ColumnName="img3Issue" />
+                <ScalarProperty Name="totalAnswers" ColumnName="totalAnswers" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_validateUserWithMail" FunctionName="Ecopropiedad_Model.Store.sp_validateUserWithMail" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_validateUserWithMail_Result">
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getDetailsPlaces" FunctionName="Ecopropiedad_Model.Store.sp_getDetailsPlaces">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getDetailsPlaces_Result">
+                <ScalarProperty Name="descriptionDetail" ColumnName="descriptionDetail" />
+                <ScalarProperty Name="valueDetail" ColumnName="valueDetail" />
+                <ScalarProperty Name="namePlace" ColumnName="namePlace" />
+                <ScalarProperty Name="descriptionPlace" ColumnName="descriptionPlace" />
+                <ScalarProperty Name="mainImagePlace" ColumnName="mainImagePlace" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getPlacesToReserve" FunctionName="Ecopropiedad_Model.Store.sp_getPlacesToReserve">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getPlacesToReserve_Result">
+                <ScalarProperty Name="idPlace" ColumnName="idPlace" />
+                <ScalarProperty Name="codeplace" ColumnName="codeplace" />
+                <ScalarProperty Name="namePlace" ColumnName="namePlace" />
+                <ScalarProperty Name="descriptionPlace" ColumnName="descriptionPlace" />
+                <ScalarProperty Name="mainImagePlace" ColumnName="mainImagePlace" />
+                <ScalarProperty Name="statusPlace" ColumnName="statusPlace" />
+                <ScalarProperty Name="titleStatus" ColumnName="titleStatus" />
+                <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getReservationsByUser" FunctionName="Ecopropiedad_Model.Store.sp_getReservationsByUser">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getReservationsByUser_Result1">
+                <ScalarProperty Name="dateEvent" ColumnName="dateEvent" />
+                <ScalarProperty Name="namePlace" ColumnName="namePlace" />
+                <ScalarProperty Name="statusReservation" ColumnName="statusReservation" />
+                <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getProvider" FunctionName="Ecopropiedad_Model.Store.sp_getProvider">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getProvider_Result">
+                <ScalarProperty Name="IDProvider" ColumnName="IDProvider" />
+                <ScalarProperty Name="nameProvider" ColumnName="nameProvider" />
+                <ScalarProperty Name="typeProvider" ColumnName="typeProvider" />
+                <ScalarProperty Name="emailProvider" ColumnName="emailProvider" />
+                <ScalarProperty Name="addressProvider" ColumnName="addressProvider" />
+                <ScalarProperty Name="latitudeProvider" ColumnName="latitudeProvider" />
+                <ScalarProperty Name="altitudeProvider" ColumnName="altitudeProvider" />
+                <ScalarProperty Name="descriptionProvider" ColumnName="descriptionProvider" />
+                <ScalarProperty Name="imageProvider" ColumnName="imageProvider" />
+                <ScalarProperty Name="dateRegisterProvider" ColumnName="dateRegisterProvider" />
+                <ScalarProperty Name="statusProvider" ColumnName="statusProvider" />
+                <ScalarProperty Name="cityProvider" ColumnName="cityProvider" />
+                <ScalarProperty Name="typephone1Provider" ColumnName="typephone1Provider" />
+                <ScalarProperty Name="numberphone1Provider" ColumnName="numberphone1Provider" />
+                <ScalarProperty Name="typephone2Provider" ColumnName="typephone2Provider" />
+                <ScalarProperty Name="numberphone2Provider" ColumnName="numberphone2Provider" />
+                <ScalarProperty Name="contactProvider" ColumnName="contactProvider" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getProvidersByType" FunctionName="Ecopropiedad_Model.Store.sp_getProvidersByType">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getProvidersByType_Result">
+                <ScalarProperty Name="IDProvider" ColumnName="IDProvider" />
+                <ScalarProperty Name="nameProvider" ColumnName="nameProvider" />
+                <ScalarProperty Name="typeProvider" ColumnName="typeProvider" />
+                <ScalarProperty Name="emailProvider" ColumnName="emailProvider" />
+                <ScalarProperty Name="addressProvider" ColumnName="addressProvider" />
+                <ScalarProperty Name="latitudeProvider" ColumnName="latitudeProvider" />
+                <ScalarProperty Name="altitudeProvider" ColumnName="altitudeProvider" />
+                <ScalarProperty Name="descriptionProvider" ColumnName="descriptionProvider" />
+                <ScalarProperty Name="imageProvider" ColumnName="imageProvider" />
+                <ScalarProperty Name="dateRegisterProvider" ColumnName="dateRegisterProvider" />
+                <ScalarProperty Name="statusProvider" ColumnName="statusProvider" />
+                <ScalarProperty Name="titleStatus" ColumnName="titleStatus" />
+                <ScalarProperty Name="cityProvider" ColumnName="cityProvider" />
+                <ScalarProperty Name="typephone1Provider" ColumnName="typephone1Provider" />
+                <ScalarProperty Name="numberphone1Provider" ColumnName="numberphone1Provider" />
+                <ScalarProperty Name="typephone2Provider" ColumnName="typephone2Provider" />
+                <ScalarProperty Name="numberphone2Provider" ColumnName="numberphone2Provider" />
+                <ScalarProperty Name="contactProvider" ColumnName="contactProvider" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getdataUserByEmail" FunctionName="Ecopropiedad_Model.Store.sp_getdataUserByEmail">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getdataUserByEmail_Result">
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="nameUser" ColumnName="nameUser" />
+                <ScalarProperty Name="emailUser" ColumnName="emailUser" />
+                <ScalarProperty Name="passwordUser" ColumnName="passwordUser" />
+                <ScalarProperty Name="idCity" ColumnName="idCity" />
+                <ScalarProperty Name="nameCity" ColumnName="nameCity" />
+                <ScalarProperty Name="idCountry" ColumnName="idCountry" />
+                <ScalarProperty Name="notifyMail" ColumnName="notifyMail" />
+                <ScalarProperty Name="numberPhone" ColumnName="numberPhone" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getdataUserByID" FunctionName="Ecopropiedad_Model.Store.sp_getdataUserByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getdataUserByID_Result">
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+                <ScalarProperty Name="nameUser" ColumnName="nameUser" />
+                <ScalarProperty Name="emailUser" ColumnName="emailUser" />
+                <ScalarProperty Name="passwordUser" ColumnName="passwordUser" />
+                <ScalarProperty Name="idCity" ColumnName="idCity" />
+                <ScalarProperty Name="nameCity" ColumnName="nameCity" />
+                <ScalarProperty Name="idCountry" ColumnName="idCountry" />
+                <ScalarProperty Name="notifyMail" ColumnName="notifyMail" />
+                <ScalarProperty Name="numberPhone" ColumnName="numberPhone" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_setProvider" FunctionName="Ecopropiedad_Model.Store.sp_setProvider" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_setProvider_Result">
+                <ScalarProperty Name="rowsinserted" ColumnName="rowsinserted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_changePassword" FunctionName="Ecopropiedad_Model.Store.sp_changePassword" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_changePassword_Result">
+                <ScalarProperty Name="rowsinserted" ColumnName="rowsinserted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_createIssue" FunctionName="Ecopropiedad_Model.Store.sp_createIssue">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_createIssue_Result">
+                <ScalarProperty Name="rowsinserted" ColumnName="rowsinserted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getTypes" FunctionName="Ecopropiedad_Model.Store.sp_getTypes">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getTypes_Result1">
+                <ScalarProperty Name="idType" ColumnName="idType" />
+                <ScalarProperty Name="descriptionType" ColumnName="descriptionType" />
+                <ScalarProperty Name="iconType" ColumnName="iconType" />
+                <ScalarProperty Name="pathIcon" ColumnName="pathIcon" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getNotificationsByUser" FunctionName="Ecopropiedad_Model.Store.sp_getNotificationsByUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getNotificationsByUser_Result">
+                <ScalarProperty Name="IdNotification" ColumnName="IdNotification" />
+                <ScalarProperty Name="titleNotification" ColumnName="titleNotification" />
+                <ScalarProperty Name="messageNotification" ColumnName="messageNotification" />
+                <ScalarProperty Name="statusNotification" ColumnName="statusNotification" />
+                <ScalarProperty Name="typeNotification" ColumnName="typeNotification" />
+                <ScalarProperty Name="dateNotification" ColumnName="dateNotification" />
+                <ScalarProperty Name="titleStatus" ColumnName="titleStatus" />
+                <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+                <ScalarProperty Name="iconType" ColumnName="iconType" />
+                <ScalarProperty Name="statusReaded" ColumnName="statusReaded" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_createNotification" FunctionName="Ecopropiedad_Model.Store.sp_createNotification" />
+          <FunctionImportMapping FunctionImportName="sp_getNotificationsByID" FunctionName="Ecopropiedad_Model.Store.sp_getNotificationsByID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getNotificationsByID_Result">
+                <ScalarProperty Name="titleNotification" ColumnName="titleNotification" />
+                <ScalarProperty Name="messageNotification" ColumnName="messageNotification" />
+                <ScalarProperty Name="statusNotification" ColumnName="statusNotification" />
+                <ScalarProperty Name="typeNotification" ColumnName="typeNotification" />
+                <ScalarProperty Name="dateNotification" ColumnName="dateNotification" />
+                <ScalarProperty Name="titleStatus" ColumnName="titleStatus" />
+                <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+                <ScalarProperty Name="iconType" ColumnName="iconType" />
+                <ScalarProperty Name="statusReaded" ColumnName="statusReaded" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_readNotification" FunctionName="Ecopropiedad_Model.Store.sp_readNotification" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_readNotification_Result">
+                <ScalarProperty Name="rowsupdated" ColumnName="rowsupdated" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getImagesPlace" FunctionName="Ecopropiedad_Model.Store.sp_getImagesPlace" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getImagesPlace_Result">
+                <ScalarProperty Name="pathImage" ColumnName="pathImage" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_setReservations" FunctionName="Ecopropiedad_Model.Store.sp_setReservations" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_setReservations_Result">
+                <ScalarProperty Name="rowsinserted" ColumnName="rowsinserted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_setAnswerIssue" FunctionName="Ecopropiedad_Model.Store.sp_setAnswerIssue" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_setAnswerIssue_Result">
+                <ScalarProperty Name="rowsinserted" ColumnName="rowsinserted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getAnswersIssue" FunctionName="Ecopropiedad_Model.Store.sp_getAnswersIssue">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getAnswersIssue_Result">
+                <ScalarProperty Name="nameUser" ColumnName="nameUser" />
+                <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+                <ScalarProperty Name="messageAnswer" ColumnName="messageAnswer" />
+                <ScalarProperty Name="dateAnswer" ColumnName="dateAnswer" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getDocuments" FunctionName="Ecopropiedad_Model.Store.sp_getDocuments">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getDocuments_Result">
+                <ScalarProperty Name="iddocument" ColumnName="iddocument" />
+                <ScalarProperty Name="descriptionDocument" ColumnName="descriptionDocument" />
+                <ScalarProperty Name="pathDocument" ColumnName="pathDocument" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="lastModified" ColumnName="lastModified" />
+                <ScalarProperty Name="statusDocument" ColumnName="statusDocument" />
+                <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+                <ScalarProperty Name="typeDocument" ColumnName="typeDocument" />
+                <ScalarProperty Name="iconType" ColumnName="iconType" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getNotificationsUnread" FunctionName="Ecopropiedad_Model.Store.sp_getNotificationsUnread">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getNotificationsUnread_Result">
+                <ScalarProperty Name="IdNotification" ColumnName="IdNotification" />
+                <ScalarProperty Name="titleNotification" ColumnName="titleNotification" />
+                <ScalarProperty Name="messageNotification" ColumnName="messageNotification" />
+                <ScalarProperty Name="statusNotification" ColumnName="statusNotification" />
+                <ScalarProperty Name="typeNotification" ColumnName="typeNotification" />
+                <ScalarProperty Name="dateNotification" ColumnName="dateNotification" />
+                <ScalarProperty Name="titleStatus" ColumnName="titleStatus" />
+                <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+                <ScalarProperty Name="iconType" ColumnName="iconType" />
+                <ScalarProperty Name="statusReaded" ColumnName="statusReaded" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getProvidersFound" FunctionName="Ecopropiedad_Model.Store.sp_getProvidersFound">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getProvidersFound_Result">
+                <ScalarProperty Name="IDProvider" ColumnName="IDProvider" />
+                <ScalarProperty Name="nameProvider" ColumnName="nameProvider" />
+                <ScalarProperty Name="typeProvider" ColumnName="typeProvider" />
+                <ScalarProperty Name="emailProvider" ColumnName="emailProvider" />
+                <ScalarProperty Name="addressProvider" ColumnName="addressProvider" />
+                <ScalarProperty Name="latitudeProvider" ColumnName="latitudeProvider" />
+                <ScalarProperty Name="altitudeProvider" ColumnName="altitudeProvider" />
+                <ScalarProperty Name="descriptionProvider" ColumnName="descriptionProvider" />
+                <ScalarProperty Name="imageProvider" ColumnName="imageProvider" />
+                <ScalarProperty Name="dateRegisterProvider" ColumnName="dateRegisterProvider" />
+                <ScalarProperty Name="statusProvider" ColumnName="statusProvider" />
+                <ScalarProperty Name="titleStatus" ColumnName="titleStatus" />
+                <ScalarProperty Name="cityProvider" ColumnName="cityProvider" />
+                <ScalarProperty Name="typephone1Provider" ColumnName="typephone1Provider" />
+                <ScalarProperty Name="numberphone1Provider" ColumnName="numberphone1Provider" />
+                <ScalarProperty Name="typephone2Provider" ColumnName="typephone2Provider" />
+                <ScalarProperty Name="numberphone2Provider" ColumnName="numberphone2Provider" />
+                <ScalarProperty Name="contactProvider" ColumnName="contactProvider" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getDocumentsByCommunity" FunctionName="Ecopropiedad_Model.Store.sp_getDocumentsByCommunity">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getDocumentsByCommunity_Result">
+                <ScalarProperty Name="iddocument" ColumnName="iddocument" />
+                <ScalarProperty Name="descriptionDocument" ColumnName="descriptionDocument" />
+                <ScalarProperty Name="titleDocument" ColumnName="titleDocument" />
+                <ScalarProperty Name="pathDocument" ColumnName="pathDocument" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="lastModified" ColumnName="lastModified" />
+                <ScalarProperty Name="statusDocument" ColumnName="statusDocument" />
+                <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+                <ScalarProperty Name="typeDocument" ColumnName="typeDocument" />
+                <ScalarProperty Name="iconType" ColumnName="iconType" />
+                <ScalarProperty Name="messageDocument" ColumnName="messageDocument" />
+                <ScalarProperty Name="statusSent" ColumnName="statusSent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getDocumentsByUser" FunctionName="Ecopropiedad_Model.Store.sp_getDocumentsByUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getDocumentsByUser_Result">
+                <ScalarProperty Name="iddocument" ColumnName="iddocument" />
+                <ScalarProperty Name="descriptionDocument" ColumnName="descriptionDocument" />
+                <ScalarProperty Name="titleDocument" ColumnName="titleDocument" />
+                <ScalarProperty Name="pathDocument" ColumnName="pathDocument" />
+                <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+                <ScalarProperty Name="lastModified" ColumnName="lastModified" />
+                <ScalarProperty Name="statusDocument" ColumnName="statusDocument" />
+                <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+                <ScalarProperty Name="typeDocument" ColumnName="typeDocument" />
+                <ScalarProperty Name="iconType" ColumnName="iconType" />
+                <ScalarProperty Name="messageDocument" ColumnName="messageDocument" />
+                <ScalarProperty Name="statusSent" ColumnName="statusSent" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getCommunitiesByUser" FunctionName="Ecopropiedad_Model.Store.sp_getCommunitiesByUser">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getCommunitiesByUser_Result">
+                <ScalarProperty Name="IDCommunity" ColumnName="IDCommunity" />
+                <ScalarProperty Name="nameCommunity" ColumnName="nameCommunity" />
+                <ScalarProperty Name="logoCommunity" ColumnName="logoCommunity" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getCountNotificationsUnread" FunctionName="Ecopropiedad_Model.Store.sp_getCountNotificationsUnread" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getCountNotificationsUnread_Result">
+                <ScalarProperty Name="notificationsUnread" ColumnName="notificationsUnread" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_setDataUser" FunctionName="Ecopropiedad_Model.Store.sp_setDataUser" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_setDataUser_Result">
+                <ScalarProperty Name="rowsinserted" ColumnName="rowsinserted" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

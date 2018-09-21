@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Ecopropiedad_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EcoPropiedadEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_communitiesbyuser" ReturnType="Collection(Ecopropiedad_Model.sp_communitiesbyuser_Result)">
+      <Parameter Name="codeUser" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getCitiesbyCountry" ReturnType="Collection(Ecopropiedad_Model.sp_getCitiesbyCountry_Result)">
+      <Parameter Name="IDCountry" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getCountries" ReturnType="Collection(Ecopropiedad_Model.sp_getCountries_Result)" />
+    <FunctionImport Name="sp_getPlans" ReturnType="Collection(Ecopropiedad_Model.sp_getPlans_Result)">
+      <Parameter Name="cityApply" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getTypeBusiness" ReturnType="Collection(Ecopropiedad_Model.sp_getTypeBusiness_Result)" />
+    <FunctionImport Name="sp_getTypes" ReturnType="Collection(Ecopropiedad_Model.sp_getTypes_Result)">
+      <Parameter Name="applytypes" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_typeBusiness" ReturnType="Collection(Ecopropiedad_Model.sp_typeBusiness_Result)" />
+    <FunctionImport Name="sp_validateUser" ReturnType="Collection(Ecopropiedad_Model.sp_validateUser_Result)">
+      <Parameter Name="codeUser" Mode="In" Type="String" />
+      <Parameter Name="passwordUser" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getdataUser" ReturnType="Collection(Ecopropiedad_Model.sp_getdataUser_Result)">
+      <Parameter Name="codeUser" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getIssuesByUser" ReturnType="Collection(Ecopropiedad_Model.sp_getIssuesByUser_Result)">
+      <Parameter Name="IDcommunity" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_validateUserWithMail" ReturnType="Collection(Ecopropiedad_Model.sp_validateUserWithMail_Result)">
+      <Parameter Name="emailUser" Mode="In" Type="String" />
+      <Parameter Name="passwordUser" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_communitiesbyuser_Result">
+    <Property Type="Int32" Name="IDCommunity" Nullable="false" />
+    <Property Type="String" Name="nameCommunity" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getCitiesbyCountry_Result">
+    <Property Type="Int32" Name="IDCity" Nullable="false" />
+    <Property Type="String" Name="nameCity" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getPlans_Result">
+    <Property Type="Int32" Name="idPlan" Nullable="false" />
+    <Property Type="String" Name="namePlan" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="descriptionPlan" Nullable="true" MaxLength="150" />
+    <Property Type="Decimal" Name="pricePlan" Nullable="true" Precision="18" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="sp_getTypeBusiness_Result">
+    <Property Type="Int32" Name="idType" Nullable="false" />
+    <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getTypes_Result">
+    <Property Type="Int32" Name="idType" Nullable="false" />
+    <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_typeBusiness_Result">
+    <Property Type="Int32" Name="idType" Nullable="false" />
+    <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_validateUser_Result">
+    <Property Type="Int32" Name="countIDs" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_getCountries_Result">
+    <Property Type="String" Name="IDCountry" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_getdataUser_Result">
+    <Property Type="Int32" Name="idUser" Nullable="false" />
+    <Property Type="String" Name="nameUser" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="emailUser" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="passwordUser" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="idCity" Nullable="true" />
+    <Property Type="String" Name="nameCity" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="idCountry" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="notifyMail" Nullable="true" />
+    <Property Type="String" Name="numberPhone" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_getIssuesByUser_Result">
+    <Property Type="Int32" Name="IDCommunity" Nullable="false" />
+    <Property Type="Int32" Name="IDIssue" Nullable="false" />
+    <Property Type="String" Name="titleIssue" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="descriptionIssue" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="statusIssue" Nullable="true" />
+    <Property Type="String" Name="descriptionStatus" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="iconStatus" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="typeIssue" Nullable="true" />
+    <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+    <Property Type="DateTime" Name="dateRegisterIssue" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="dateChangedIssue" Nullable="true" Precision="23" />
+    <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="numberIssue" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="img1Issue" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="img2Issue" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="img3Issue" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_validateUserWithMail_Result">
+    <Property Type="Int32" Name="idUser" Nullable="true" />
+  </ComplexType>
+</Schema>

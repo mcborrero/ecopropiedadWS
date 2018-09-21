@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Ecopropiedad_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EcoPropiedadEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_communitiesbyuser">
+      <Parameter Name="idUser" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getCitiesbyCountry" ReturnType="Collection(Ecopropiedad_Model.sp_getCitiesbyCountry_Result)">
+      <Parameter Name="IDCountry" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getCountries" ReturnType="Collection(Ecopropiedad_Model.sp_getCountries_Result)" />
+    <FunctionImport Name="sp_getPlans" ReturnType="Collection(Ecopropiedad_Model.sp_getPlans_Result)">
+      <Parameter Name="cityApply" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getTypeBusiness" ReturnType="Collection(Ecopropiedad_Model.sp_getTypeBusiness_Result)" />
+    <FunctionImport Name="sp_typeBusiness" ReturnType="Collection(Ecopropiedad_Model.sp_typeBusiness_Result)" />
+    <FunctionImport Name="sp_validateUser" ReturnType="Collection(Ecopropiedad_Model.sp_validateUser_Result)">
+      <Parameter Name="codeUser" Mode="In" Type="String" />
+      <Parameter Name="passwordUser" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getdataUser" ReturnType="Collection(Ecopropiedad_Model.sp_getdataUser_Result)">
+      <Parameter Name="codeUser" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getIssuesByUser" ReturnType="Collection(Ecopropiedad_Model.sp_getIssuesByUser_Result)">
+      <Parameter Name="IDcommunity" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_validateUserWithMail" ReturnType="Collection(Ecopropiedad_Model.sp_validateUserWithMail_Result)">
+      <Parameter Name="emailUser" Mode="In" Type="String" />
+      <Parameter Name="passwordUser" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getDetailsPlaces" ReturnType="Collection(Ecopropiedad_Model.sp_getDetailsPlaces_Result)">
+      <Parameter Name="IDPlace" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getPlacesToReserve" ReturnType="Collection(Ecopropiedad_Model.sp_getPlacesToReserve_Result)">
+      <Parameter Name="IDcommunity" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getReservationsByUser" ReturnType="Collection(Ecopropiedad_Model.sp_getReservationsByUser_Result1)">
+      <Parameter Name="IDUser" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getProvider" ReturnType="Collection(Ecopropiedad_Model.sp_getProvider_Result)">
+      <Parameter Name="idProvider" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getProvidersByType" ReturnType="Collection(Ecopropiedad_Model.sp_getProvidersByType_Result)">
+      <Parameter Name="IDType" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getdataUserByEmail" ReturnType="Collection(Ecopropiedad_Model.sp_getdataUserByEmail_Result)">
+      <Parameter Name="emailUser" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getdataUserByID" ReturnType="Collection(Ecopropiedad_Model.sp_getdataUserByID_Result)">
+      <Parameter Name="IDUser" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_setProvider" ReturnType="Collection(Ecopropiedad_Model.sp_setProvider_Result)">
+      <Parameter Name="nameProvider" Mode="In" Type="String" />
+      <Parameter Name="typeProvider" Mode="In" Type="Int32" />
+      <Parameter Name="emailProvider" Mode="In" Type="String" />
+      <Parameter Name="addressProvider" Mode="In" Type="String" />
+      <Parameter Name="latitudeProvider" Mode="In" Type="String" />
+      <Parameter Name="altitudeProvider" Mode="In" Type="String" />
+      <Parameter Name="descriptionProvider" Mode="In" Type="String" />
+      <Parameter Name="imageProvider" Mode="In" Type="String" />
+      <Parameter Name="cityProvider" Mode="In" Type="Int32" />
+      <Parameter Name="contactProvider" Mode="In" Type="String" />
+      <Parameter Name="typephone1Provider" Mode="In" Type="Int32" />
+      <Parameter Name="numberphone1Provider" Mode="In" Type="String" />
+      <Parameter Name="typephone2Provider" Mode="In" Type="Int32" />
+      <Parameter Name="numberphone2Provider" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_changePassword" ReturnType="Collection(Ecopropiedad_Model.sp_changePassword_Result)">
+      <Parameter Name="IDUser" Mode="In" Type="Int32" />
+      <Parameter Name="newPassword" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_createIssue" ReturnType="Collection(Ecopropiedad_Model.sp_createIssue_Result)">
+      <Parameter Name="IDcommunity" Mode="In" Type="Int32" />
+      <Parameter Name="titleIssue" Mode="In" Type="String" />
+      <Parameter Name="descriptionIssue" Mode="In" Type="String" />
+      <Parameter Name="img1Issue" Mode="In" Type="String" />
+      <Parameter Name="img2Issue" Mode="In" Type="String" />
+      <Parameter Name="typeIssue" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getTypes" ReturnType="Collection(Ecopropiedad_Model.sp_getTypes_Result1)">
+      <Parameter Name="applytypes" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getNotificationsByUser" ReturnType="Collection(Ecopropiedad_Model.sp_getNotificationsByUser_Result)">
+      <Parameter Name="IDUser" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_createNotification">
+      <Parameter Name="IDcommunity" Mode="In" Type="Int32" />
+      <Parameter Name="titleNotification" Mode="In" Type="String" />
+      <Parameter Name="messageNotification" Mode="In" Type="String" />
+      <Parameter Name="statusNotification" Mode="In" Type="Int32" />
+      <Parameter Name="typeNotification" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getNotificationsByID" ReturnType="Collection(Ecopropiedad_Model.sp_getNotificationsByID_Result)">
+      <Parameter Name="IDNotification" Mode="In" Type="Int32" />
+      <Parameter Name="IDUser" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_readNotification" ReturnType="Collection(Ecopropiedad_Model.sp_readNotification_Result)">
+      <Parameter Name="IDNotification" Mode="In" Type="Int32" />
+      <Parameter Name="IDUser" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getImagesPlace" ReturnType="Collection(Ecopropiedad_Model.sp_getImagesPlace_Result)">
+      <Parameter Name="IDPlace" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_setReservations" ReturnType="Collection(Ecopropiedad_Model.sp_setReservations_Result)">
+      <Parameter Name="idplace" Mode="In" Type="Int32" />
+      <Parameter Name="IDUser" Mode="In" Type="Int32" />
+      <Parameter Name="dateReserved" Mode="In" Type="DateTime" />
+      <Parameter Name="dateEvent" Mode="In" Type="DateTime" />
+      <Parameter Name="reason" Mode="In" Type="String" />
+      <Parameter Name="numberPeople" Mode="In" Type="Int32" />
+      <Parameter Name="time" Mode="In" Type="String" />
+      <Parameter Name="notes" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_setAnswerIssue" ReturnType="Collection(Ecopropiedad_Model.sp_setAnswerIssue_Result)">
+      <Parameter Name="IDIssue" Mode="In" Type="Int32" />
+      <Parameter Name="IDUser" Mode="In" Type="String" />
+      <Parameter Name="messageAnswer" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getAnswersIssue" ReturnType="Collection(Ecopropiedad_Model.sp_getAnswersIssue_Result)">
+      <Parameter Name="IDIssue" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getDocuments" ReturnType="Collection(Ecopropiedad_Model.sp_getDocuments_Result)">
+      <Parameter Name="IDUser" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getNotificationsUnread" ReturnType="Collection(Ecopropiedad_Model.sp_getNotificationsUnread_Result)">
+      <Parameter Name="IDUser" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getProvidersFound" ReturnType="Collection(Ecopropiedad_Model.sp_getProvidersFound_Result)">
+      <Parameter Name="searchtext" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getDocumentsByCommunity" ReturnType="Collection(Ecopropiedad_Model.sp_getDocumentsByCommunity_Result)">
+      <Parameter Name="IDCommunity" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getDocumentsByUser" ReturnType="Collection(Ecopropiedad_Model.sp_getDocumentsByUser_Result)">
+      <Parameter Name="IDUser" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getCommunitiesByUser" ReturnType="Collection(Ecopropiedad_Model.sp_getCommunitiesByUser_Result)">
+      <Parameter Name="idUser" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_getCountNotificationsUnread" ReturnType="Collection(Ecopropiedad_Model.sp_getCountNotificationsUnread_Result)">
+      <Parameter Name="IDUser" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_setDataUser" ReturnType="Collection(Ecopropiedad_Model.sp_setDataUser_Result)">
+      <Parameter Name="IDUser" Mode="In" Type="Int32" />
+      <Parameter Name="newPassword" Mode="In" Type="String" />
+      <Parameter Name="notifyMail" Mode="In" Type="Int32" />
+      <Parameter Name="emailUser" Mode="In" Type="String" />
+      <Parameter Name="numberPhone" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="sp_getCitiesbyCountry_Result">
+    <Property Type="Int32" Name="IDCity" Nullable="false" />
+    <Property Type="String" Name="nameCity" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getPlans_Result">
+    <Property Type="Int32" Name="idPlan" Nullable="false" />
+    <Property Type="String" Name="namePlan" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="descriptionPlan" Nullable="true" MaxLength="150" />
+    <Property Type="Decimal" Name="pricePlan" Nullable="true" Precision="18" Scale="0" />
+  </ComplexType>
+  <ComplexType Name="sp_getTypeBusiness_Result">
+    <Property Type="Int32" Name="idType" Nullable="false" />
+    <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getTypes_Result">
+    <Property Type="Int32" Name="idType" Nullable="false" />
+    <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_typeBusiness_Result">
+    <Property Type="Int32" Name="idType" Nullable="false" />
+    <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_validateUser_Result">
+    <Property Type="Int32" Name="countIDs" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_getCountries_Result">
+    <Property Type="String" Name="IDCountry" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_getdataUser_Result">
+    <Property Type="Int32" Name="idUser" Nullable="false" />
+    <Property Type="String" Name="nameUser" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="emailUser" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="passwordUser" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="idCity" Nullable="true" />
+    <Property Type="String" Name="nameCity" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="idCountry" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="notifyMail" Nullable="true" />
+    <Property Type="String" Name="numberPhone" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_validateUserWithMail_Result">
+    <Property Type="Int32" Name="idUser" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_getDetailsPlaces_Result">
+    <Property Type="String" Name="descriptionDetail" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="valueDetail" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="namePlace" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="descriptionPlace" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="mainImagePlace" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="sp_getReservationsByUser_Result">
+    <Property Type="DateTime" Name="dateEvent" Nullable="true" Precision="23" />
+    <Property Type="String" Name="namePlace" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="statusReservation" Nullable="false" />
+    <Property Type="String" Name="iconStatus" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getReservationsByUser_Result1">
+    <Property Type="DateTime" Name="dateEvent" Nullable="true" Precision="23" />
+    <Property Type="String" Name="namePlace" Nullable="false" MaxLength="150" />
+    <Property Type="Int32" Name="statusReservation" Nullable="false" />
+    <Property Type="String" Name="iconStatus" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getProvider_Result">
+    <Property Type="Int32" Name="IDProvider" Nullable="false" />
+    <Property Type="String" Name="nameProvider" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="typeProvider" Nullable="false" />
+    <Property Type="String" Name="emailProvider" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="addressProvider" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="latitudeProvider" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="altitudeProvider" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="descriptionProvider" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="imageProvider" Nullable="true" />
+    <Property Type="DateTime" Name="dateRegisterProvider" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="statusProvider" Nullable="false" />
+    <Property Type="Int32" Name="cityProvider" Nullable="false" />
+    <Property Type="Int32" Name="typephone1Provider" Nullable="true" />
+    <Property Type="String" Name="numberphone1Provider" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="typephone2Provider" Nullable="true" />
+    <Property Type="String" Name="numberphone2Provider" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="contactProvider" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getProvidersByType_Result">
+    <Property Type="Int32" Name="IDProvider" Nullable="false" />
+    <Property Type="String" Name="nameProvider" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="typeProvider" Nullable="false" />
+    <Property Type="String" Name="emailProvider" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="addressProvider" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="latitudeProvider" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="altitudeProvider" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="descriptionProvider" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="imageProvider" Nullable="true" />
+    <Property Type="DateTime" Name="dateRegisterProvider" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="statusProvider" Nullable="false" />
+    <Property Type="String" Name="titleStatus" Nullable="true" MaxLength="25" />
+    <Property Type="Int32" Name="cityProvider" Nullable="false" />
+    <Property Type="Int32" Name="typephone1Provider" Nullable="true" />
+    <Property Type="String" Name="numberphone1Provider" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="typephone2Provider" Nullable="true" />
+    <Property Type="String" Name="numberphone2Provider" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="contactProvider" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getdataUserByEmail_Result">
+    <Property Type="Int32" Name="idUser" Nullable="false" />
+    <Property Type="String" Name="nameUser" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="emailUser" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="passwordUser" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="idCity" Nullable="true" />
+    <Property Type="String" Name="nameCity" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="idCountry" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="notifyMail" Nullable="true" />
+    <Property Type="String" Name="numberPhone" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_getdataUserByID_Result">
+    <Property Type="Int32" Name="idUser" Nullable="false" />
+    <Property Type="String" Name="nameUser" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="emailUser" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="passwordUser" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="idCity" Nullable="true" />
+    <Property Type="String" Name="nameCity" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="idCountry" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="notifyMail" Nullable="true" />
+    <Property Type="String" Name="numberPhone" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_setProvider_Result">
+    <Property Type="Int32" Name="rowsinserted" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_changePassword_Result">
+    <Property Type="Int32" Name="rowsinserted" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_createIssue_Result">
+    <Property Type="Int32" Name="rowsinserted" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_getTypes_Result1">
+    <Property Type="Int32" Name="idType" Nullable="false" />
+    <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="pathIcon" Nullable="false" MaxLength="301" />
+  </ComplexType>
+  <ComplexType Name="sp_getNotificationsByUser_Result">
+    <Property Type="Int32" Name="IdNotification" Nullable="false" />
+    <Property Type="String" Name="titleNotification" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="messageNotification" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="statusNotification" Nullable="false" />
+    <Property Type="Int32" Name="typeNotification" Nullable="false" />
+    <Property Type="DateTime" Name="dateNotification" Nullable="true" Precision="23" />
+    <Property Type="String" Name="titleStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="iconStatus" Nullable="false" MaxLength="301" />
+    <Property Type="String" Name="iconType" Nullable="false" MaxLength="301" />
+    <Property Type="Int32" Name="statusReaded" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_setReservations_Result">
+    <Property Type="Int32" Name="rowsinserted" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_getImagesPlace_Result">
+    <Property Type="String" Name="pathImage" Nullable="false" MaxLength="321" />
+  </ComplexType>
+  <ComplexType Name="sp_getNotificationsByID_Result">
+    <Property Type="String" Name="titleNotification" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="messageNotification" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="statusNotification" Nullable="false" />
+    <Property Type="Int32" Name="typeNotification" Nullable="false" />
+    <Property Type="DateTime" Name="dateNotification" Nullable="true" Precision="23" />
+    <Property Type="String" Name="titleStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="iconStatus" Nullable="false" MaxLength="301" />
+    <Property Type="String" Name="iconType" Nullable="false" MaxLength="301" />
+    <Property Type="Int32" Name="statusReaded" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_getPlacesToReserve_Result">
+    <Property Type="Int32" Name="idPlace" Nullable="false" />
+    <Property Type="String" Name="codeplace" Nullable="true" MaxLength="25" />
+    <Property Type="String" Name="namePlace" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="descriptionPlace" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="mainImagePlace" Nullable="false" MaxLength="316" />
+    <Property Type="Int32" Name="statusPlace" Nullable="true" />
+    <Property Type="String" Name="titleStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="iconStatus" Nullable="false" MaxLength="301" />
+  </ComplexType>
+  <ComplexType Name="sp_readNotification_Result">
+    <Property Type="Int32" Name="rowsupdated" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_setAnswerIssue_Result">
+    <Property Type="Int32" Name="rowsinserted" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_getAnswersIssue_Result">
+    <Property Type="String" Name="nameUser" Nullable="false" MaxLength="511" />
+    <Property Type="Int32" Name="IDUser" Nullable="false" />
+    <Property Type="String" Name="messageAnswer" Nullable="true" MaxLength="500" />
+    <Property Type="DateTime" Name="dateAnswer" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="sp_getDocuments_Result">
+    <Property Type="Int32" Name="iddocument" Nullable="false" />
+    <Property Type="String" Name="descriptionDocument" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="pathDocument" Nullable="false" MaxLength="304" />
+    <Property Type="DateTime" Name="dateCreated" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="lastModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="statusDocument" Nullable="false" />
+    <Property Type="String" Name="iconStatus" Nullable="false" MaxLength="308" />
+    <Property Type="Int32" Name="typeDocument" Nullable="true" />
+    <Property Type="String" Name="iconType" Nullable="false" MaxLength="307" />
+  </ComplexType>
+  <ComplexType Name="sp_getNotificationsUnread_Result">
+    <Property Type="Int32" Name="IdNotification" Nullable="false" />
+    <Property Type="String" Name="titleNotification" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="messageNotification" Nullable="false" MaxLength="500" />
+    <Property Type="Int32" Name="statusNotification" Nullable="false" />
+    <Property Type="Int32" Name="typeNotification" Nullable="false" />
+    <Property Type="DateTime" Name="dateNotification" Nullable="true" Precision="23" />
+    <Property Type="String" Name="titleStatus" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="iconStatus" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="statusReaded" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_getProvidersFound_Result">
+    <Property Type="Int32" Name="IDProvider" Nullable="false" />
+    <Property Type="String" Name="nameProvider" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="typeProvider" Nullable="false" />
+    <Property Type="String" Name="emailProvider" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="addressProvider" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="latitudeProvider" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="altitudeProvider" Nullable="true" MaxLength="5" />
+    <Property Type="String" Name="descriptionProvider" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="imageProvider" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="dateRegisterProvider" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="statusProvider" Nullable="false" />
+    <Property Type="String" Name="titleStatus" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="cityProvider" Nullable="false" />
+    <Property Type="Int32" Name="typephone1Provider" Nullable="true" />
+    <Property Type="String" Name="numberphone1Provider" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="typephone2Provider" Nullable="true" />
+    <Property Type="String" Name="numberphone2Provider" Nullable="true" MaxLength="15" />
+    <Property Type="String" Name="contactProvider" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getIssuesByUser_Result">
+    <Property Type="Int32" Name="IDCommunity" Nullable="false" />
+    <Property Type="Int32" Name="IDIssue" Nullable="false" />
+    <Property Type="String" Name="numbertitleIssue" Nullable="false" MaxLength="8000" />
+    <Property Type="String" Name="titleIssue" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="descriptionIssue" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="statusIssue" Nullable="true" />
+    <Property Type="String" Name="descriptionStatus" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="iconStatus" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="typeIssue" Nullable="true" />
+    <Property Type="String" Name="descriptionType" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="dateRegisterIssue" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="dateChangedIssue" Nullable="true" Precision="23" />
+    <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="numberIssue" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="img1Issue" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="img2Issue" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="img3Issue" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="totalAnswers" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_getCommunitiesByUser_Result">
+    <Property Type="Int32" Name="IDCommunity" Nullable="false" />
+    <Property Type="String" Name="nameCommunity" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="logoCommunity" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getDocumentsByCommunity_Result">
+    <Property Type="Int32" Name="iddocument" Nullable="false" />
+    <Property Type="String" Name="descriptionDocument" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="titleDocument" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="pathDocument" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="dateCreated" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="lastModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="statusDocument" Nullable="false" />
+    <Property Type="String" Name="iconStatus" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="typeDocument" Nullable="true" />
+    <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="messageDocument" Nullable="true" />
+    <Property Type="String" Name="statusSent" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getDocumentsByUser_Result">
+    <Property Type="Int32" Name="iddocument" Nullable="false" />
+    <Property Type="String" Name="descriptionDocument" Nullable="false" MaxLength="150" />
+    <Property Type="String" Name="titleDocument" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="pathDocument" Nullable="true" MaxLength="255" />
+    <Property Type="DateTime" Name="dateCreated" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="lastModified" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="statusDocument" Nullable="false" />
+    <Property Type="String" Name="iconStatus" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="typeDocument" Nullable="true" />
+    <Property Type="String" Name="iconType" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="messageDocument" Nullable="true" />
+    <Property Type="String" Name="statusSent" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="sp_getCountNotificationsUnread_Result">
+    <Property Type="Int32" Name="notificationsUnread" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_setDataUser_Result">
+    <Property Type="Int32" Name="rowsinserted" Nullable="false" />
+  </ComplexType>
+</Schema>

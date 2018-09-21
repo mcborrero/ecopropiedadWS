@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ecopropiedadModelStoreContainer" CdmEntityContainer="ecopropiedadEntities">
+    <FunctionImportMapping FunctionImportName="sp_validateUser" FunctionName="ecopropiedadModel.Store.sp_validateUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ecopropiedadModel.sp_validateUser_Result">
+          <ScalarProperty Name="countIDs" ColumnName="countIDs" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getCitiesbyCountry" FunctionName="ecopropiedadModel.Store.sp_getCitiesbyCountry">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ecopropiedadModel.sp_getCitiesbyCountry_Result">
+          <ScalarProperty Name="IDCity" ColumnName="IDCity" />
+          <ScalarProperty Name="nameCity" ColumnName="nameCity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getCountries" FunctionName="ecopropiedadModel.Store.sp_getCountries">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ecopropiedadModel.sp_getCountries_Result">
+          <ScalarProperty Name="IDCountry" ColumnName="IDCountry" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getTypes" FunctionName="ecopropiedadModel.Store.sp_getTypes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ecopropiedadModel.sp_getTypes_Result1">
+          <ScalarProperty Name="idType" ColumnName="idType" />
+          <ScalarProperty Name="descriptionType" ColumnName="descriptionType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Ecopropiedad_ModelStoreContainer" CdmEntityContainer="EcoPropiedadEntities">
+    <FunctionImportMapping FunctionImportName="sp_getCitiesbyCountry" FunctionName="Ecopropiedad_Model.Store.sp_getCitiesbyCountry">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getCitiesbyCountry_Result">
+          <ScalarProperty Name="IDCity" ColumnName="IDCity" />
+          <ScalarProperty Name="nameCity" ColumnName="nameCity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getCountries" FunctionName="Ecopropiedad_Model.Store.sp_getCountries">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getCountries_Result">
+          <ScalarProperty Name="IDCountry" ColumnName="IDCountry" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getPlans" FunctionName="Ecopropiedad_Model.Store.sp_getPlans">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getPlans_Result">
+          <ScalarProperty Name="idPlan" ColumnName="idPlan" />
+          <ScalarProperty Name="namePlan" ColumnName="namePlan" />
+          <ScalarProperty Name="descriptionPlan" ColumnName="descriptionPlan" />
+          <ScalarProperty Name="pricePlan" ColumnName="pricePlan" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getTypeBusiness" FunctionName="Ecopropiedad_Model.Store.sp_getTypeBusiness">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getTypeBusiness_Result">
+          <ScalarProperty Name="idType" ColumnName="idType" />
+          <ScalarProperty Name="descriptionType" ColumnName="descriptionType" />
+          <ScalarProperty Name="iconType" ColumnName="iconType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_typeBusiness" FunctionName="Ecopropiedad_Model.Store.sp_typeBusiness">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_typeBusiness_Result">
+          <ScalarProperty Name="idType" ColumnName="idType" />
+          <ScalarProperty Name="descriptionType" ColumnName="descriptionType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_validateUser" FunctionName="Ecopropiedad_Model.Store.sp_validateUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_validateUser_Result">
+          <ScalarProperty Name="countIDs" ColumnName="countIDs" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getdataUser" FunctionName="Ecopropiedad_Model.Store.sp_getdataUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getdataUser_Result">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="nameUser" ColumnName="nameUser" />
+          <ScalarProperty Name="emailUser" ColumnName="emailUser" />
+          <ScalarProperty Name="passwordUser" ColumnName="passwordUser" />
+          <ScalarProperty Name="idCity" ColumnName="idCity" />
+          <ScalarProperty Name="nameCity" ColumnName="nameCity" />
+          <ScalarProperty Name="idCountry" ColumnName="idCountry" />
+          <ScalarProperty Name="notifyMail" ColumnName="notifyMail" />
+          <ScalarProperty Name="numberPhone" ColumnName="numberPhone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getIssuesByUser" FunctionName="Ecopropiedad_Model.Store.sp_getIssuesByUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getIssuesByUser_Result">
+          <ScalarProperty Name="IDCommunity" ColumnName="IDCommunity" />
+          <ScalarProperty Name="IDIssue" ColumnName="IDIssue" />
+          <ScalarProperty Name="numbertitleIssue" ColumnName="numbertitleIssue" />
+          <ScalarProperty Name="titleIssue" ColumnName="titleIssue" />
+          <ScalarProperty Name="descriptionIssue" ColumnName="descriptionIssue" />
+          <ScalarProperty Name="statusIssue" ColumnName="statusIssue" />
+          <ScalarProperty Name="descriptionStatus" ColumnName="descriptionStatus" />
+          <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+          <ScalarProperty Name="typeIssue" ColumnName="typeIssue" />
+          <ScalarProperty Name="descriptionType" ColumnName="descriptionType" />
+          <ScalarProperty Name="dateRegisterIssue" ColumnName="dateRegisterIssue" />
+          <ScalarProperty Name="dateChangedIssue" ColumnName="dateChangedIssue" />
+          <ScalarProperty Name="iconType" ColumnName="iconType" />
+          <ScalarProperty Name="numberIssue" ColumnName="numberIssue" />
+          <ScalarProperty Name="img1Issue" ColumnName="img1Issue" />
+          <ScalarProperty Name="img2Issue" ColumnName="img2Issue" />
+          <ScalarProperty Name="img3Issue" ColumnName="img3Issue" />
+          <ScalarProperty Name="totalAnswers" ColumnName="totalAnswers" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_validateUserWithMail" FunctionName="Ecopropiedad_Model.Store.sp_validateUserWithMail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_validateUserWithMail_Result">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getDetailsPlaces" FunctionName="Ecopropiedad_Model.Store.sp_getDetailsPlaces">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getDetailsPlaces_Result">
+          <ScalarProperty Name="descriptionDetail" ColumnName="descriptionDetail" />
+          <ScalarProperty Name="valueDetail" ColumnName="valueDetail" />
+          <ScalarProperty Name="namePlace" ColumnName="namePlace" />
+          <ScalarProperty Name="descriptionPlace" ColumnName="descriptionPlace" />
+          <ScalarProperty Name="mainImagePlace" ColumnName="mainImagePlace" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getPlacesToReserve" FunctionName="Ecopropiedad_Model.Store.sp_getPlacesToReserve">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getPlacesToReserve_Result">
+          <ScalarProperty Name="idPlace" ColumnName="idPlace" />
+          <ScalarProperty Name="codeplace" ColumnName="codeplace" />
+          <ScalarProperty Name="namePlace" ColumnName="namePlace" />
+          <ScalarProperty Name="descriptionPlace" ColumnName="descriptionPlace" />
+          <ScalarProperty Name="mainImagePlace" ColumnName="mainImagePlace" />
+          <ScalarProperty Name="statusPlace" ColumnName="statusPlace" />
+          <ScalarProperty Name="titleStatus" ColumnName="titleStatus" />
+          <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getReservationsByUser" FunctionName="Ecopropiedad_Model.Store.sp_getReservationsByUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getReservationsByUser_Result1">
+          <ScalarProperty Name="dateEvent" ColumnName="dateEvent" />
+          <ScalarProperty Name="namePlace" ColumnName="namePlace" />
+          <ScalarProperty Name="statusReservation" ColumnName="statusReservation" />
+          <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getProvider" FunctionName="Ecopropiedad_Model.Store.sp_getProvider">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getProvider_Result">
+          <ScalarProperty Name="IDProvider" ColumnName="IDProvider" />
+          <ScalarProperty Name="nameProvider" ColumnName="nameProvider" />
+          <ScalarProperty Name="typeProvider" ColumnName="typeProvider" />
+          <ScalarProperty Name="emailProvider" ColumnName="emailProvider" />
+          <ScalarProperty Name="addressProvider" ColumnName="addressProvider" />
+          <ScalarProperty Name="latitudeProvider" ColumnName="latitudeProvider" />
+          <ScalarProperty Name="altitudeProvider" ColumnName="altitudeProvider" />
+          <ScalarProperty Name="descriptionProvider" ColumnName="descriptionProvider" />
+          <ScalarProperty Name="imageProvider" ColumnName="imageProvider" />
+          <ScalarProperty Name="dateRegisterProvider" ColumnName="dateRegisterProvider" />
+          <ScalarProperty Name="statusProvider" ColumnName="statusProvider" />
+          <ScalarProperty Name="cityProvider" ColumnName="cityProvider" />
+          <ScalarProperty Name="typephone1Provider" ColumnName="typephone1Provider" />
+          <ScalarProperty Name="numberphone1Provider" ColumnName="numberphone1Provider" />
+          <ScalarProperty Name="typephone2Provider" ColumnName="typephone2Provider" />
+          <ScalarProperty Name="numberphone2Provider" ColumnName="numberphone2Provider" />
+          <ScalarProperty Name="contactProvider" ColumnName="contactProvider" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getProvidersByType" FunctionName="Ecopropiedad_Model.Store.sp_getProvidersByType">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getProvidersByType_Result">
+          <ScalarProperty Name="IDProvider" ColumnName="IDProvider" />
+          <ScalarProperty Name="nameProvider" ColumnName="nameProvider" />
+          <ScalarProperty Name="typeProvider" ColumnName="typeProvider" />
+          <ScalarProperty Name="emailProvider" ColumnName="emailProvider" />
+          <ScalarProperty Name="addressProvider" ColumnName="addressProvider" />
+          <ScalarProperty Name="latitudeProvider" ColumnName="latitudeProvider" />
+          <ScalarProperty Name="altitudeProvider" ColumnName="altitudeProvider" />
+          <ScalarProperty Name="descriptionProvider" ColumnName="descriptionProvider" />
+          <ScalarProperty Name="imageProvider" ColumnName="imageProvider" />
+          <ScalarProperty Name="dateRegisterProvider" ColumnName="dateRegisterProvider" />
+          <ScalarProperty Name="statusProvider" ColumnName="statusProvider" />
+          <ScalarProperty Name="titleStatus" ColumnName="titleStatus" />
+          <ScalarProperty Name="cityProvider" ColumnName="cityProvider" />
+          <ScalarProperty Name="typephone1Provider" ColumnName="typephone1Provider" />
+          <ScalarProperty Name="numberphone1Provider" ColumnName="numberphone1Provider" />
+          <ScalarProperty Name="typephone2Provider" ColumnName="typephone2Provider" />
+          <ScalarProperty Name="numberphone2Provider" ColumnName="numberphone2Provider" />
+          <ScalarProperty Name="contactProvider" ColumnName="contactProvider" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getdataUserByEmail" FunctionName="Ecopropiedad_Model.Store.sp_getdataUserByEmail">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getdataUserByEmail_Result">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="nameUser" ColumnName="nameUser" />
+          <ScalarProperty Name="emailUser" ColumnName="emailUser" />
+          <ScalarProperty Name="passwordUser" ColumnName="passwordUser" />
+          <ScalarProperty Name="idCity" ColumnName="idCity" />
+          <ScalarProperty Name="nameCity" ColumnName="nameCity" />
+          <ScalarProperty Name="idCountry" ColumnName="idCountry" />
+          <ScalarProperty Name="notifyMail" ColumnName="notifyMail" />
+          <ScalarProperty Name="numberPhone" ColumnName="numberPhone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getdataUserByID" FunctionName="Ecopropiedad_Model.Store.sp_getdataUserByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getdataUserByID_Result">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="nameUser" ColumnName="nameUser" />
+          <ScalarProperty Name="emailUser" ColumnName="emailUser" />
+          <ScalarProperty Name="passwordUser" ColumnName="passwordUser" />
+          <ScalarProperty Name="idCity" ColumnName="idCity" />
+          <ScalarProperty Name="nameCity" ColumnName="nameCity" />
+          <ScalarProperty Name="idCountry" ColumnName="idCountry" />
+          <ScalarProperty Name="notifyMail" ColumnName="notifyMail" />
+          <ScalarProperty Name="numberPhone" ColumnName="numberPhone" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_setProvider" FunctionName="Ecopropiedad_Model.Store.sp_setProvider">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_setProvider_Result">
+          <ScalarProperty Name="rowsinserted" ColumnName="rowsinserted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_changePassword" FunctionName="Ecopropiedad_Model.Store.sp_changePassword">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_changePassword_Result">
+          <ScalarProperty Name="rowsinserted" ColumnName="rowsinserted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_createIssue" FunctionName="Ecopropiedad_Model.Store.sp_createIssue">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_createIssue_Result">
+          <ScalarProperty Name="rowsinserted" ColumnName="rowsinserted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getTypes" FunctionName="Ecopropiedad_Model.Store.sp_getTypes">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getTypes_Result1">
+          <ScalarProperty Name="idType" ColumnName="idType" />
+          <ScalarProperty Name="descriptionType" ColumnName="descriptionType" />
+          <ScalarProperty Name="iconType" ColumnName="iconType" />
+          <ScalarProperty Name="pathIcon" ColumnName="pathIcon" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getNotificationsByUser" FunctionName="Ecopropiedad_Model.Store.sp_getNotificationsByUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getNotificationsByUser_Result">
+          <ScalarProperty Name="IdNotification" ColumnName="IdNotification" />
+          <ScalarProperty Name="titleNotification" ColumnName="titleNotification" />
+          <ScalarProperty Name="messageNotification" ColumnName="messageNotification" />
+          <ScalarProperty Name="statusNotification" ColumnName="statusNotification" />
+          <ScalarProperty Name="typeNotification" ColumnName="typeNotification" />
+          <ScalarProperty Name="dateNotification" ColumnName="dateNotification" />
+          <ScalarProperty Name="titleStatus" ColumnName="titleStatus" />
+          <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+          <ScalarProperty Name="iconType" ColumnName="iconType" />
+          <ScalarProperty Name="statusReaded" ColumnName="statusReaded" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_createNotification" FunctionName="Ecopropiedad_Model.Store.sp_createNotification" />
+    <FunctionImportMapping FunctionImportName="sp_getNotificationsByID" FunctionName="Ecopropiedad_Model.Store.sp_getNotificationsByID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getNotificationsByID_Result">
+          <ScalarProperty Name="titleNotification" ColumnName="titleNotification" />
+          <ScalarProperty Name="messageNotification" ColumnName="messageNotification" />
+          <ScalarProperty Name="statusNotification" ColumnName="statusNotification" />
+          <ScalarProperty Name="typeNotification" ColumnName="typeNotification" />
+          <ScalarProperty Name="dateNotification" ColumnName="dateNotification" />
+          <ScalarProperty Name="titleStatus" ColumnName="titleStatus" />
+          <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+          <ScalarProperty Name="iconType" ColumnName="iconType" />
+          <ScalarProperty Name="statusReaded" ColumnName="statusReaded" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_readNotification" FunctionName="Ecopropiedad_Model.Store.sp_readNotification">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_readNotification_Result">
+          <ScalarProperty Name="rowsupdated" ColumnName="rowsupdated" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getImagesPlace" FunctionName="Ecopropiedad_Model.Store.sp_getImagesPlace">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getImagesPlace_Result">
+          <ScalarProperty Name="pathImage" ColumnName="pathImage" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_setReservations" FunctionName="Ecopropiedad_Model.Store.sp_setReservations">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_setReservations_Result">
+          <ScalarProperty Name="rowsinserted" ColumnName="rowsinserted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_setAnswerIssue" FunctionName="Ecopropiedad_Model.Store.sp_setAnswerIssue">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_setAnswerIssue_Result">
+          <ScalarProperty Name="rowsinserted" ColumnName="rowsinserted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getAnswersIssue" FunctionName="Ecopropiedad_Model.Store.sp_getAnswersIssue">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getAnswersIssue_Result">
+          <ScalarProperty Name="nameUser" ColumnName="nameUser" />
+          <ScalarProperty Name="IDUser" ColumnName="IDUser" />
+          <ScalarProperty Name="messageAnswer" ColumnName="messageAnswer" />
+          <ScalarProperty Name="dateAnswer" ColumnName="dateAnswer" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getDocuments" FunctionName="Ecopropiedad_Model.Store.sp_getDocuments">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getDocuments_Result">
+          <ScalarProperty Name="iddocument" ColumnName="iddocument" />
+          <ScalarProperty Name="descriptionDocument" ColumnName="descriptionDocument" />
+          <ScalarProperty Name="pathDocument" ColumnName="pathDocument" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="lastModified" ColumnName="lastModified" />
+          <ScalarProperty Name="statusDocument" ColumnName="statusDocument" />
+          <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+          <ScalarProperty Name="typeDocument" ColumnName="typeDocument" />
+          <ScalarProperty Name="iconType" ColumnName="iconType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getNotificationsUnread" FunctionName="Ecopropiedad_Model.Store.sp_getNotificationsUnread">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getNotificationsUnread_Result">
+          <ScalarProperty Name="IdNotification" ColumnName="IdNotification" />
+          <ScalarProperty Name="titleNotification" ColumnName="titleNotification" />
+          <ScalarProperty Name="messageNotification" ColumnName="messageNotification" />
+          <ScalarProperty Name="statusNotification" ColumnName="statusNotification" />
+          <ScalarProperty Name="typeNotification" ColumnName="typeNotification" />
+          <ScalarProperty Name="dateNotification" ColumnName="dateNotification" />
+          <ScalarProperty Name="titleStatus" ColumnName="titleStatus" />
+          <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+          <ScalarProperty Name="iconType" ColumnName="iconType" />
+          <ScalarProperty Name="statusReaded" ColumnName="statusReaded" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getProvidersFound" FunctionName="Ecopropiedad_Model.Store.sp_getProvidersFound">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getProvidersFound_Result">
+          <ScalarProperty Name="IDProvider" ColumnName="IDProvider" />
+          <ScalarProperty Name="nameProvider" ColumnName="nameProvider" />
+          <ScalarProperty Name="typeProvider" ColumnName="typeProvider" />
+          <ScalarProperty Name="emailProvider" ColumnName="emailProvider" />
+          <ScalarProperty Name="addressProvider" ColumnName="addressProvider" />
+          <ScalarProperty Name="latitudeProvider" ColumnName="latitudeProvider" />
+          <ScalarProperty Name="altitudeProvider" ColumnName="altitudeProvider" />
+          <ScalarProperty Name="descriptionProvider" ColumnName="descriptionProvider" />
+          <ScalarProperty Name="imageProvider" ColumnName="imageProvider" />
+          <ScalarProperty Name="dateRegisterProvider" ColumnName="dateRegisterProvider" />
+          <ScalarProperty Name="statusProvider" ColumnName="statusProvider" />
+          <ScalarProperty Name="titleStatus" ColumnName="titleStatus" />
+          <ScalarProperty Name="cityProvider" ColumnName="cityProvider" />
+          <ScalarProperty Name="typephone1Provider" ColumnName="typephone1Provider" />
+          <ScalarProperty Name="numberphone1Provider" ColumnName="numberphone1Provider" />
+          <ScalarProperty Name="typephone2Provider" ColumnName="typephone2Provider" />
+          <ScalarProperty Name="numberphone2Provider" ColumnName="numberphone2Provider" />
+          <ScalarProperty Name="contactProvider" ColumnName="contactProvider" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getDocumentsByCommunity" FunctionName="Ecopropiedad_Model.Store.sp_getDocumentsByCommunity">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getDocumentsByCommunity_Result">
+          <ScalarProperty Name="iddocument" ColumnName="iddocument" />
+          <ScalarProperty Name="descriptionDocument" ColumnName="descriptionDocument" />
+          <ScalarProperty Name="titleDocument" ColumnName="titleDocument" />
+          <ScalarProperty Name="pathDocument" ColumnName="pathDocument" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="lastModified" ColumnName="lastModified" />
+          <ScalarProperty Name="statusDocument" ColumnName="statusDocument" />
+          <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+          <ScalarProperty Name="typeDocument" ColumnName="typeDocument" />
+          <ScalarProperty Name="iconType" ColumnName="iconType" />
+          <ScalarProperty Name="messageDocument" ColumnName="messageDocument" />
+          <ScalarProperty Name="statusSent" ColumnName="statusSent" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getDocumentsByUser" FunctionName="Ecopropiedad_Model.Store.sp_getDocumentsByUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getDocumentsByUser_Result">
+          <ScalarProperty Name="iddocument" ColumnName="iddocument" />
+          <ScalarProperty Name="descriptionDocument" ColumnName="descriptionDocument" />
+          <ScalarProperty Name="titleDocument" ColumnName="titleDocument" />
+          <ScalarProperty Name="pathDocument" ColumnName="pathDocument" />
+          <ScalarProperty Name="dateCreated" ColumnName="dateCreated" />
+          <ScalarProperty Name="lastModified" ColumnName="lastModified" />
+          <ScalarProperty Name="statusDocument" ColumnName="statusDocument" />
+          <ScalarProperty Name="iconStatus" ColumnName="iconStatus" />
+          <ScalarProperty Name="typeDocument" ColumnName="typeDocument" />
+          <ScalarProperty Name="iconType" ColumnName="iconType" />
+          <ScalarProperty Name="messageDocument" ColumnName="messageDocument" />
+          <ScalarProperty Name="statusSent" ColumnName="statusSent" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getCommunitiesByUser" FunctionName="Ecopropiedad_Model.Store.sp_getCommunitiesByUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getCommunitiesByUser_Result">
+          <ScalarProperty Name="IDCommunity" ColumnName="IDCommunity" />
+          <ScalarProperty Name="nameCommunity" ColumnName="nameCommunity" />
+          <ScalarProperty Name="logoCommunity" ColumnName="logoCommunity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getCountNotificationsUnread" FunctionName="Ecopropiedad_Model.Store.sp_getCountNotificationsUnread">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_getCountNotificationsUnread_Result">
+          <ScalarProperty Name="notificationsUnread" ColumnName="notificationsUnread" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_setDataUser" FunctionName="Ecopropiedad_Model.Store.sp_setDataUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="Ecopropiedad_Model.sp_setDataUser_Result">
+          <ScalarProperty Name="rowsinserted" ColumnName="rowsinserted" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
